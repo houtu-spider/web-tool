@@ -19,11 +19,17 @@
 <h1 align="center">Tool_Center</h1>
 <p align="center"><font size="10" color="green">Welcome</font></p>
 
-<a href="./timestamp_covert.html">
+<a>
 
     <p align="left">
-        <button style="height: 100px;width: 500px;color: white;background: green;border: none">
+        <button style="height: 100px;width: 450px;color: white;background: green;border: none" onclick="window.location.href='timestamp_covert.html'">
             <font size="100">时间戳转换</font>
+        </button>
+        <button style="height: 100px;width: 450px;color: white;background: #a05ca4;border: none" onclick="window.location.href='send_me_message.html'">
+            <font size="100">发个消息</font>
+        </button>
+        <button style="height: 100px;width: 450px;color: white;background: #dac645;border: none" onclick="this_is_a_button()">
+            <font size="100" id="this_a_btn">这是个按钮</font>
         </button>
     </p>
 </a>
@@ -35,4 +41,20 @@
 </div>
 
 </body>
+<script>
+    function this_is_a_button () {
+        let word_list = [
+            "让你别点",
+            "你别点",
+            "点我就急",
+            "急急急",
+            "我只是个按钮",
+            "你干嘛",
+            "哎呦"
+        ];
+        btn_show = document.getElementById("this_a_btn");
+        btn_index = Math.floor(word_list.length * Math.random());
+        btn_show.innerHTML = word_list[btn_index];
+    }
+</script>
 </html>
