@@ -1,0 +1,27 @@
+{
+  "name": "web-tool",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bin/run.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon /bin/run.js",
+    "serve": "node running_pack/index.js",
+    "build": "babel routes -d running_pack"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "ejs": "3.1.10",
+    "express": "^4.17.3",
+    "http": "^0.0.1-security",
+    "http-errors": "~1.6.3",
+    "https": "^1.0.0",
+    "koa": "^2.15.0",
+    "morgan": "~1.9.1",
+    "nodemon": "^3.1.7",
+    "serve-favicon": "^2.5.0",
+    "vue": "2.6.10",
+    "vue-router": "3.0.2"
+  }
+}

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>蜘蛛工具大全</title>
+    <link rel="stylesheet" href="/stylesheets/common.css">
+    <style>
+        body {
+            background: #1c1c22;
+            user-select: none;
+        }
+        ul {
+            list-style: none;
+            cursor: pointer;
+        }
+        a,span {
+            color: #fff;
+        }
+        .menu h3 {
+            padding: 20px;
+            position: relative;
+            margin-bottom: -20px;
+        }
+        .menu > ul {
+            padding: 0 16px;
+         }
+        .menu > ul > li {
+            padding: 20px 0;
+            border-top: 2px solid #37383D;
+        }
+        .menu > ul > li:first-child {
+            border-top: none;
+        }
+        .sub_menu {
+            position: relative;
+            margin: 0 20px;
+            line-height: 40px;
+            color: #fff;
+            border-radius: 24px;
+            font-size: 15px;
+        }
+        .sub_menu.active {
+            background: #047BFB;
+        }
+        .sub_menu > img {
+            margin-bottom: -4px;
+        }
+        .sub_menu > img:first-child {
+            margin-left: 12px;
+            margin-right: 6px;
+        }
+        .sub_menu > a {
+            width: 80px;
+            align-items: center;
+        }
+        .menu > ul > li > ul > li {
+            margin-top: 20px;
+        }
+        .back_home {
+            position: fixed;
+            bottom: 46px;
+            width: 80%;
+            left: 50%;
+            transform: translateX(-50%);
+            line-height: 40px;
+            text-align: center;
+            color: #fff;
+            background-color: #047BFB;
+            border-radius: 24px;
+            cursor: pointer;
+        }
+        .beian {
+            position: fixed;
+            bottom: 16px;
+            width: 80%;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .imag_2 {
+            float: right;
+            margin-top: 10px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+<div class="menu">
+
+    <h3 align="middle">
+        <image src="/images/menu_show.png" ></image>
+        <br>
+        <span>蜘蛛工具大全</span>
+    </h3>
+
+    <ul id="menu_list">
+        <li>
+            <div class="sub_menu sub_first active">
+                <image src="/icons/home.svg" alt=""></image>
+                <a href="detail" target="detail">基础工具列表</a>
+                <image src="/icons/point_right.svg" alt="" class="imag_2"></image>
+            </div>
+            <ul>
+                <li class="sub_menu">
+                    <image src="/icons/home.svg" alt=""></image>
+                    <a href="timestamp_covert" target="detail">时间戳转换</a>
+                </li>
+                <li class="sub_menu">
+                    <image src="/icons/home.svg" alt=""></image>
+                    <a href="#">待定</a>
+                </li>
+            </ul>
+        </li>
+
+        <li>
+            <div class="sub_menu sub_first">
+                <image src="/icons/home.svg" alt=""></image>
+                <a href="detail" target="detail">JSON工具</a>
+                <image src="/icons/point_right.svg" alt="" class="imag_2"></image>
+            </div>
+            <ul>
+                <li class="sub_menu">
+                    <image src="/icons/home.svg" alt=""></image>
+                    <a href="#">字符串转JSON</a>
+                </li>
+                <li class="sub_menu">
+                    <image src="/icons/home.svg" alt=""></image>
+                    <a href="#">JSON格式化</a>
+                </li>
+            </ul>
+        </li>
+
+        <li>
+            <div class="sub_menu sub_first">
+                <image src="/icons/home.svg" alt=""></image>
+                <a href="spider_chat" target="detail">SpiderChat</a>
+            </div>
+        </li>
+
+        <li>
+            <div class="sub_menu sub_first">
+                <image src="/icons/home.svg" alt=""></image>
+                <a href="send_me_message" target="detail">联系作者</a>
+            </div>
+        </li>
+    </ul>
+    <div class="back_home" id ="random_back_home" onclick="this_is_a_button()">Back Home</div>
+    <div class="beian">
+        <a target="_blank" href="http://beian.miit.gov.cn/"
+           style="display:inline-block;text-decoration:none;height:20px;line-height:20px;" rel="noopener">
+            蜀ICP备2022011126号-1
+        </a>
+    </div>
+</div>
+
+<script>
+    let obj_menu = document.getElementById('menu_list')
+    let sub_menu_list = obj_menu.getElementsByClassName('sub_first')
+    for (let sub_menu of sub_menu_list) {
+        sub_menu.addEventListener('click', function () {
+            let current = document.getElementsByClassName('active')
+            if (current.length > 0) {
+                current[0].className = current[0].className.replace(" active", "");
+            }
+            this.className += ' active'
+        })
+    }
+
+</script>
+
+<script>
+    function this_is_a_button() {
+        let word_list = [
+            "我只是个按钮",
+            "返回主页",
+            "你别点我",
+            "你点上面其他的",
+            "Back Home"
+        ];
+        bh_show = document.getElementById("random_back_home");
+        bh_index = Math.floor(word_list.length * Math.random());
+        bh_show.innerHTML = word_list[bh_index];
+    }
+</script>
+</body>
+</html>
