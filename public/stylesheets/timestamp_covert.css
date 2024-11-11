@@ -1,0 +1,142 @@
+.container {
+    width: 100vw;
+    height: 100vh;
+    background-color: #15151D;
+    position: relative;
+}
+.main {
+    margin: 0;
+    position: absolute;
+    top: 15%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+}
+.copy_time {
+    width: 400px;
+    height: 180px;
+    position: absolute;
+    color: white;
+    text-align: center;
+    line-height: 50px;
+    user-select: none;
+}
+.show_tips {
+    width: 150px;
+    height: 50px;
+    font-size: 24px;
+}
+.show_and_unit {
+    display: flex;
+}
+.show {
+    min-width: 200px;
+    max-width: 240px;
+    color: white;
+    background-color: #067BFB;
+    border-radius: 24px;
+    font-size: 28px;
+    user-select: text;
+}
+.show_unit {
+    height: 25px;
+    font-size: 20px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+.copy_btns {
+    margin-top: 10px;
+    width: 240px;
+    height: 50px;
+    display: flex;
+}
+.switch_time {
+    width: 110px;
+    height: 50px;
+    font-size: 22px;
+    border-radius: 12px;
+    background-color: #067BFB;
+}
+.copy {
+    width: 110px;
+    height: 50px;
+    margin-left: 10px;
+    font-size: 22px;
+    border-radius: 12px;
+    background-color: #067BFB;
+}
+ .time_trans {
+     margin-top: 220px;
+     width: 900px;
+     height: 180px;
+     position: absolute;
+     text-align: center;
+ }
+.trans_tips {
+    width: 200px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 24px;
+    color: white;
+    background-color: #15151D;
+    user-select: none;
+}
+.num_2_str {
+    height: 50px;
+    width: 850px;
+    display: flex;
+    padding-bottom: 20px;
+    line-height: 50px;
+    color: white;
+}
+.input_div {
+    width: 200px;
+    border: solid #047BFB;
+    background-color: #37383D;
+    border-radius: 12px;
+    color: white;
+}
+.input_div_1 {
+    width: 280px;
+    border: solid #047BFB;
+    background-color: #37383D;
+    border-radius: 12px;
+}
+.time_show {
+    width: 180px;
+    height: 42px;
+    font-size: 22px;
+    margin-top: -5px;
+    background-color: #37383D;
+    color: white;
+}
+.time_show_1 {
+    width: 220px;
+}
+.change_format {
+    width: 110px;
+    margin-left: 20px;
+    background-color: #047BFB;
+    font-size: 22px;
+    border-radius: 24px;
+    user-select: none;
+}
+.trans {
+    width: 110px;
+    margin-left: 20px;
+    background-color: #047BFB;
+    font-size: 22px;
+    border-radius: 24px;
+    user-select: none;
+}
+.time_answer_1 {
+    width: 250px;
+    margin-left: 20px;
+    font-size: 22px;
+    border: solid #047BFB;
+    background-color: #37383D;
+    border-radius: 12px;
+    margin-top: -5px;
+}
+.time_answer_2 {
+    width: 200px;
+}
