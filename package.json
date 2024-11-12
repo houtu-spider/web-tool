@@ -7,7 +7,7 @@
   "type": "commonjs",
   "scripts": {
     "start": "nodemon /bin/run.js",
-    "build": "webpack --mode=production --node-env=production",
+    "build": "rm demo.js demo.js.LICENSE.txt && webpack --mode=production --node-env=production",
     "server": "nohup node ./demo.js &"
   },
   "dependencies": {
