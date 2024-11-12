@@ -7,7 +7,7 @@
   "scripts": {
     "start": "nodemon /bin/run.js",
     "build": "webpack --mode=production --node-env=production",
-    "server": "nohub node ./demo.js &"
+    "server": "nohup node ./demo.js &"
   },
   "dependencies": {
     "babel": "^6.23.0",
