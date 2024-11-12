@@ -4,6 +4,7 @@
   "description": "",
   "main": "bin/run.js",
   "license": "ISC",
+  "type": "commonjs",
   "scripts": {
     "start": "nodemon /bin/run.js",
     "build": "webpack --mode=production --node-env=production",

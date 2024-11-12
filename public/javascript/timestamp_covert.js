@@ -2,6 +2,7 @@ let copy_time_display = 's'
 let copy_time_timeout = null
 let obj_show_copy_time = document.getElementById('show_copy_time')
 let obj_show_unit = document.getElementById('show_unit')
+import { send_toast } from './send_toast.js'
 
 copy_time_timeout = setInterval(change_copy_time_show, 100)
 
@@ -38,23 +39,14 @@ obj_copy_time_btn.onclick = function () {
     if (navigator.clipboard && window.isSecureContext) {
         navigator.clipboard.writeText(obj_show_copy_time.textContent)
     } else {
-        let text_area = document.createElement('textarea')
-        text_area.value = obj_show_copy_time.textContent
-        text_area.select()
+        let cp_input = document.createElement('input')
+        document.body.appendChild(cp_input)
+        cp_input.value = obj_show_copy_time.textContent
+        cp_input.select()
         document.execCommand('copy')
-        text_area.remove()
+        cp_input.style.display = 'none'
     }
     send_toast("复制成功")
-}
-function send_toast(message) {
-    Swal.fire({
-        title: message,
-        icon: 'success',
-        timer: 1000,
-        toast: true,
-        showConfirmButton: false,
-        position: 'top-end',
-    })
 }
 
 let obj_time_show_1 = document.getElementById("time_show_1")

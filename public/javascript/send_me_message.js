@@ -1,3 +1,4 @@
+import { send_toast } from './send_toast.js'
 let obj_btn = document.getElementById("btn");
 let obj_span = document.getElementById("span");
 let obj_prompt = document.getElementById('prompt')
@@ -24,14 +25,14 @@ obj_btn.onmousedown = function () {
     // 发送CD
     let now_time = (new Date()).getTime()
     if (now_time - last_send_time <= cd_send_message) {
-        alert("频繁发送消息, 请稍后再发")
+        send_toast("频繁发送消息, 请稍后再发", 'error')
         return ;
     }
 
     // 空消息
     let obj_txt = document.getElementById('msg_text')
     if (!obj_txt.value || !obj_txt.value.length) {
-        alert("不能发送空信息")
+        send_toast("不能发送空信息", 'error')
         return ;
     }
 
