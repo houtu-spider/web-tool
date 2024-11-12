@@ -3,17 +3,26 @@
   "version": "1.0.0",
   "description": "",
   "main": "bin/run.js",
+  "license": "ISC",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon /bin/run.js",
-    "serve": "node running_pack/index.js",
-    "build": "babel routes -d running_pack"
+    "build": "webpack --mode=production --node-env=production",
+    "server": "nohub node ./demo.js &"
   },
   "dependencies": {
+    "babel": "^6.23.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "7",
+    "babel-preset-env": "^1.7.0",
     "cookie-parser": "~1.4.4",
+    "css-loader": "^7.1.2",
     "debug": "~2.6.9",
     "ejs": "3.1.10",
+    "ejs-loader": "^0.5.0",
     "express": "^4.17.3",
+    "file-loader": "^6.2.0",
+    "html-loader": "^5.1.0",
+    "html-webpack-plugin": "^5.6.3",
     "http": "^0.0.1-security",
     "http-errors": "~1.6.3",
     "https": "^1.0.0",
@@ -21,7 +30,10 @@
     "morgan": "~1.9.1",
     "nodemon": "^3.1.7",
     "serve-favicon": "^2.5.0",
+    "style-loader": "^4.0.0",
     "vue": "2.6.10",
-    "vue-router": "3.0.2"
+    "vue-router": "3.0.2",
+    "webpack": "^5.96.1",
+    "webpack-cli": "^5.1.4"
   }
 }

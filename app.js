@@ -10,16 +10,19 @@ const detail = require('./routes/detail')
 const timestamp_covert = require('./routes/detail/timestamp_covert')
 const send_me_message = require('./routes/detail/send_me_message')
 const spider_chat = require('./routes/detail/spider_chat')
+const ejs = require('ejs').__express
 
 const app = express();
 
 app.set('views', path.join(__dirname, 'views'));
+
 app.set('view engine', 'ejs');
+app.engine('ejs', ejs);
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(serverFavicon(path.join(__dirname, './public/icons/favicon.ico')));
+app.use(serverFavicon(path.join(__dirname, 'favicon.ico')));
 
 app.use('/', indexRouter);
 // 详情
