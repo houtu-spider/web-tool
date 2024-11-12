@@ -35,7 +35,15 @@ obj_switch_time.onclick = function () {
 // 点击复制
 let obj_copy_time_btn = document.getElementById('copy_time_btn')
 obj_copy_time_btn.onclick = function () {
-    navigator.clipboard.writeText(obj_show_copy_time.textContent)
+    if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(obj_show_copy_time.textContent)
+    } else {
+        let text_area = document.createElement('textarea')
+        text_area.value = obj_show_copy_time.textContent
+        text_area.select()
+        document.execCommand('copy')
+        text_area.remove()
+    }
     send_toast("复制成功")
 }
 function send_toast(message) {
