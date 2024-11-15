@@ -5,10 +5,10 @@ router.get('/', function (req, res, next) {
     res.render('detail/send_me_message')
 })
 
-router.get('/send_message', function (req, res, next) {
+router.post('/send_message', function (req, res) {
     let ip = getClientIp(req);
     let host = req.hostname;
-    let message = req.query.web_message;
+    let message = req.body.web_message;
     message = `sender: ${ip} ${host}\n` + message;
     return send_msg(message);
 })
