@@ -26,7 +26,30 @@ for (let server_cfg of web_tool_config.server) {
     }
 
     server.listen(port, '0.0.0.0');
-    server.on('error', onError)
+    server.on('error', (error) => {
+        if (error.syscall !== 'listen') {
+            throw error;
+        }
+
+        const bind = typeof port === 'string'
+            ? 'Pipe ' + port
+            : 'Port ' + port;
+
+        // handle specific listen errors with friendly messages
+        switch (error.code) {
+            case 'EACCES':
+                console.error(bind + ' requires elevated privileges');
+                process.exit(1);
+                break;
+            case 'EADDRINUSE':
+                console.error(bind + ' is already in use');
+                process.exit(1);
+                break;
+            default:
+                throw error;
+        }
+    })
+
     server.on('listening', () => {
         const addr = server.address();
         const bind = typeof addr === 'string'
@@ -50,28 +73,4 @@ function normalizePort(val) {
     }
 
     return 0;
-}
-
-function onError(error) {
-    if (error.syscall !== 'listen') {
-        throw error;
-    }
-
-    const bind = typeof port === 'string'
-        ? 'Pipe ' + port
-        : 'Port ' + port;
-
-    // handle specific listen errors with friendly messages
-    switch (error.code) {
-        case 'EACCES':
-            console.error(bind + ' requires elevated privileges');
-            process.exit(1);
-            break;
-        case 'EADDRINUSE':
-            console.error(bind + ' is already in use');
-            process.exit(1);
-            break;
-        default:
-            throw error;
-    }
 }
