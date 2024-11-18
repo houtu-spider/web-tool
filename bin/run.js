@@ -5,8 +5,8 @@ const https = require('https');
 const web_tool_config = require('../web_tool_config.js');
 const fs =require('fs');
 
-for (let server of web_tool_config.server) {
-    const {name, port: server_port, ssl} = server;
+for (let server_cfg of web_tool_config.server) {
+    const {name, port: server_port, ssl} = server_cfg;
     const default_port = ssl ? web_tool_config.default_https_port : web_tool_config.default_http_port;
     const port = normalizePort(server_port || default_port);
     app.set('port', port);
