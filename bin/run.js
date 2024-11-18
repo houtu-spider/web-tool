@@ -27,7 +27,13 @@ for (let server_cfg of web_tool_config.server) {
 
     server.listen(port, '0.0.0.0');
     server.on('error', onError)
-    server.on('listening', onListening);
+    server.on('listening', () => {
+        const addr = server.address();
+        const bind = typeof addr === 'string'
+            ? 'pipe ' + addr
+            : 'port ' + addr.port;
+        debug('Listening on ' + bind);
+    });
 }
 
 function normalizePort(val) {
@@ -68,12 +74,4 @@ function onError(error) {
         default:
             throw error;
     }
-}
-
-function onListening() {
-    const addr = server.address();
-    const bind = typeof addr === 'string'
-        ? 'pipe ' + addr
-        : 'port ' + addr.port;
-    debug('Listening on ' + bind);
 }
