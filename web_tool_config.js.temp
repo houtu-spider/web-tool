@@ -1,0 +1,34 @@
+//
+//  web_tool配置模板
+//
+
+exports.server = [
+    {
+        name: 'domain_1',
+        port: 443,
+        ssl: true,
+    },
+    {
+        name: 'domain_2',
+        port: 80,
+        ssl: true,
+    }
+];
+
+// HTTP服务默认启动端口
+exports.default_http_port = 80;
+
+// HTTPS服务默认启动端口
+exports.default_https_port = 443;
+
+// SSL
+exports.https_options = {
+    'domain_1': {
+        key: 'public/https/***********.key',
+        cert: 'public/https/***********.crt'
+    },
+    'domain_2': {
+        key: 'public/https/***********.key',
+        cert: 'public/https/***********.crt'
+    }
+};

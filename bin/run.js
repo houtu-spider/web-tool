@@ -1,21 +1,34 @@
 const app = require('../app');
 const debug = require('debug')('web-express:server');
-const http = require('https');
-const web_tool_config = require('../web_tool_config');
+const http = require('http');
+const https = require('https');
+const web_tool_config = require('../web_tool_config.js');
 const fs =require('fs');
 
-const port = normalizePort(process.env.PORT || web_tool_config.https_port);
-app.set('port', port);
+for (let server of web_tool_config.server) {
+    const {name, port: server_port, ssl} = server;
+    const default_port = ssl ? web_tool_config.default_https_port : web_tool_config.default_http_port;
+    const port = normalizePort(server_port || default_port);
+    app.set('port', port);
 
-const https_options = {
-    key: fs.readFileSync(web_tool_config.https_options.key),
-    cert: fs.readFileSync(web_tool_config.https_options.cert)
-};
-const server = http.createServer(https_options, app);
+    let server;
+    if (ssl) {
+        // https
+        const https_options = {
+            key: fs.readFileSync(web_tool_config.https_options[name].key),
+            cert: fs.readFileSync(web_tool_config.https_options[name].cert)
+        };
 
-server.listen(port, '0.0.0.0');
-server.on('error', onError)
-server.on('listening', onListening);
+        server = https.createServer(https_options, app);
+
+    } else {
+        server = http.createServer(app);
+    }
+
+    server.listen(port, '0.0.0.0');
+    server.on('error', onError)
+    server.on('listening', onListening);
+}
 
 function normalizePort(val) {
     const port = parseInt(val, 10);
