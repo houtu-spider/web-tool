@@ -1,4 +1,4 @@
-const {new_app} = require('app');
+const {new_app} = require('../app');
 const debug = require('debug')('web-express:server');
 const http = require('http');
 const https = require('https');
