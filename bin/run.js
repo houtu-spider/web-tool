@@ -1,15 +1,17 @@
-const app = require('../app');
+const {new_app} = require('app');
 const debug = require('debug')('web-express:server');
 const http = require('http');
 const https = require('https');
 const web_tool_config = require('../web_tool_config.js');
 const fs =require('fs');
+const express = require('express');
 
 for (let server_cfg of web_tool_config.server) {
     const {name, port: server_port, ssl} = server_cfg;
     const default_port = ssl ? web_tool_config.default_https_port : web_tool_config.default_http_port;
     const port = normalizePort(server_port || default_port);
-    app.set('port', port);
+    const server_app = new_app(express());
+    server_app.set('port', port);
 
     let server;
     if (ssl) {
@@ -19,10 +21,10 @@ for (let server_cfg of web_tool_config.server) {
             cert: fs.readFileSync(web_tool_config.https_options[name].cert)
         };
 
-        server = https.createServer(https_options, app);
+        server = https.createServer(https_options, server_app);
 
     } else {
-        server = http.createServer(app);
+        server = http.createServer(server_app);
     }
 
     server.listen(port, '0.0.0.0');
