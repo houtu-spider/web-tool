@@ -3,3 +3,5 @@ node_modules
 .vscode
 demo.js
 demo.js.LICENSE.txt
+web_tool_config.js
+public/https

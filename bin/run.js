@@ -1,11 +1,17 @@
 const app = require('../app');
 const debug = require('debug')('web-express:server');
-const http = require('http');
+const http = require('https');
+const web_tool_config = require('../web_tool_config');
+const fs =require('fs');
 
-const port = normalizePort(process.env.PORT || '80');
+const port = normalizePort(process.env.PORT || web_tool_config.https_port);
 app.set('port', port);
 
-const server = http.createServer(app);
+const https_options = {
+    key: fs.readFileSync(web_tool_config.https_options.key),
+    cert: fs.readFileSync(web_tool_config.https_options.cert)
+};
+const server = http.createServer(https_options, app);
 
 server.listen(port, '0.0.0.0');
 server.on('error', onError)
