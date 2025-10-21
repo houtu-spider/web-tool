@@ -66,72 +66,14 @@
             </div>
         </li>
     </ul>
-    <div class="back_home" id ="random_back_home" onclick="this_is_a_button()">Back Home</div>
+    <div class="back_home" id ="random_back_home">Back Home</div>
     <div class="beian">
-        <a target="_blank" href="http://beian.miit.gov.cn/"
+        <a id="beian" target="_blank" href="http://beian.miit.gov.cn/"
            style="display:inline-block;text-decoration:none;height:20px;line-height:20px;" rel="noopener">
-            蜀ICP备2022011126号-1
         </a>
     </div>
 </div>
 
-<script>
-    let obj_menu = document.getElementById('menu_list')
-
-    // 点击父级分类设置当前为active
-    let sub_menu_list = obj_menu.getElementsByClassName('sub_first')
-    for (let sub_menu of sub_menu_list) {
-        sub_menu.addEventListener('click', function () {
-            clear_active()
-            this.className += ' active'
-        })
-    }
-
-    // 点击子分类设置当前对应父级分类为active
-    let sub_func_list = obj_menu.getElementsByClassName('sub_func')
-    for (let sub_func of sub_func_list) {
-        sub_func.addEventListener('click', function () {
-            clear_active()
-            // 设置当前父级分类为active
-            let sub_menu = sub_func.parentElement.previousElementSibling;
-            sub_menu.className += ' active';
-        })
-    }
-
-    // 清除当前active类
-    function clear_active () {
-        let current = document.getElementsByClassName('active')
-        if (current.length > 0) {
-            current[0].className = current[0].className.replace(" active", "");
-        }
-    }
-
-</script>
-
-<script>
-    let now_index = 0
-    function this_is_a_button() {
-        let word_list = [
-            "Back Home",
-            "我只是个按钮",
-            "返回主页",
-            "你别点我",
-            "你点上面其他的"
-        ];
-        let bh_show = document.getElementById("random_back_home");
-        let bh_index = random_exclude(word_list.length, now_index);
-        bh_show.innerHTML = word_list[bh_index];
-        now_index = bh_index
-    }
-
-    function random_exclude (max, exclude) {
-        while (true) {
-            let index = Math.floor(max * Math.random())
-            if (index != exclude) {
-                return index
-            }
-        }
-    }
-</script>
+<script async src="/javascript/menu.js" type="module"></script>
 </body>
 </html>

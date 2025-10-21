@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>蜘蛛工具大全</title>
+    <link rel="stylesheet" href="/stylesheets/common.css">
+    <link rel="stylesheet" href="/stylesheets/spider_chat.css">
+</head>
+
+<body>
+<div class="container">
+    <div class="chat_main">
+        <div class="chat_desc">
+            <div class="chat_desc1">
+                <image src="/icons/chat_desc.svg"></image>
+                <div class="chat_desc_msg">小蜘蛛AI助手</div>
+            </div>
+            <div class="chat_desc2">小蜘蛛AI助手24小时在线, 用心解答您的问题</div>
+        </div>
+        <div class="mid_line"></div>
+        <div class="chat_box">
+            <div class="ai_msg">
+                <image class="msg_icon" src="/icons/chat_ai.svg"></image>
+                <div class="show_msg_ai show_msg">思考中, 请稍等...</div>
+            </div>
+            <div class="usr_msg">
+                <div class="show_msg_usr show_msg"></div>
+                <image class="msg_icon" src="/icons/chat_usr.svg"></image>
+            </div>
+        </div>
+        <div class="user_chat">
+            <form class="message_form" id="message_form" action="spider_chat/chat" method="post">
+                <div class="message_box">
+                    <textarea class="message_content" id="message_content"></textarea>
+                </div>
+                <div class="btn_box">
+                    <div class="chat_btn" id="clear_history" style="background-color: #dac645">清空历史</div>
+                    <div class="chat_btn" id="send_btn" style="background-color: #047BFB">发送</div>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+<script async src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.5/dist/sweetalert2.min.js"></script>
+<script async src="/javascript/spider_chat.js" type="module"></script>
+</body>
+</html>

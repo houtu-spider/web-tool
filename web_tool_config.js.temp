@@ -32,3 +32,20 @@ exports.https_options = {
         cert: 'public/https/***********.crt'
     }
 };
+
+
+// 备案信息
+exports.beian_str = "*****************";
+
+// 星火API
+exports.now_spark_api = "Spark_4_Ultra";
+exports.spark_api = {
+    "Spark_4_Ultra": {
+        "modelDomain": "4.0Ultra",
+        "Url": "https://spark-api.xf-yun.com/v4.0/chat",
+        "APPID": "*******",
+        "APISecret": "*******",
+        "APIKey": "*******",
+        "APIPassword": "*******"
+    },
+};

@@ -1,0 +1,138 @@
+.container {
+    background-color: #15151D;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+}
+.chat_main {
+    background-color: #37383D;
+    width: 1200px;
+    height: 816px;
+    border-radius: 24px;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+    user-select: none;
+}
+/*
+********************************************************************************************************
+// 介绍栏
+*/
+.chat_desc {
+    height: 119px;
+    user-select: none;
+}
+.chat_desc1 {
+    height: 64px;
+    margin-left: 40px;
+    display: flex;
+}
+.chat_desc_msg {
+    font-size: 36px;
+    padding: 0 20px;
+    align-content: center;
+    color: #00B7FF;
+}
+.chat_desc2 {
+    font-size: 20px;
+    margin-left: 40px;
+    margin-top: 10px;
+    color: #00B7FF;
+}
+.mid_line {
+    height: 1px;
+    width: 1120px;
+    background-color: #00B7FF;
+    margin: auto;
+}
+/*
+********************************************************************************************************
+// 聊天框
+*/
+.chat_box {
+    height: 520px;
+    width: 1120px;
+    margin-left: 40px;
+}
+.msg_icon {
+    height: 48px;
+    width: 48px;
+}
+.show_msg {
+    max-width: 900px;
+    min-width: 100px;
+    height: auto;
+    font-size: 20px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 5px;
+    text-align: left;
+    color: white;
+    background-color: #656565;
+    border-radius: 12px;
+    margin-top: 5px;
+ }
+.ai_msg {
+    float: left;
+    width: 1120px;
+    display: flex;
+}
+.show_msg_ai {
+    margin-left: 4px;
+}
+.usr_msg {
+    float: right;
+    display: flex;
+}
+.show_msg_usr {
+    margin-right: 4px;
+}
+/*
+********************************************************************************************************
+// 信息输入
+*/
+.user_chat {
+    height: 160px;
+    display: flex;
+    margin-left: 40px;
+}
+.message_box {
+    background-color: #656565;
+    width: 920px;
+    border-radius: 24px;
+    user-select: none;
+}
+.message_form {
+    display: flex;
+}
+.message_content {
+    margin-left: 15px;
+    margin-top: 10px;
+    background-color: #656565;
+    width: 890px;
+    height: 140px;
+    border: none;
+    resize: none;
+    outline: none;
+    font-size: 24px;
+    overflow: scroll;
+}
+.message_content::-webkit-scrollbar {
+    display: none;
+}
+.btn_box {
+    margin-left: 10px;
+    width: 200px;
+    user-select: none;
+    color: white;
+}
+.chat_btn {
+    width: 180px;
+    height: 65px;
+    margin-left: 5px;
+    margin-top: 10px;
+    text-align: center;
+    line-height: 65px;
+    font-size: 32px;
+    border-radius: 24px;
+}
