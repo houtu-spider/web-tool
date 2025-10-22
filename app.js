@@ -8,6 +8,7 @@ const indexRouter = require('./routes/index');
 const menu = require('./routes/menu')
 const detail = require('./routes/detail')
 const timestamp_covert = require('./routes/detail/timestamp_covert')
+const tax_message_trans = require('./routes/detail/tax_message_trans')
 const send_me_message = require('./routes/detail/send_me_message')
 const spider_chat = require('./routes/detail/spider_chat')
 const ejs = require('ejs').__express
@@ -30,6 +31,8 @@ function new_app(app) {
     app.use('/menu', menu);
 // 时间戳转换
     app.use('/timestamp_covert', timestamp_covert);
+// 税款语句转换
+    app.use('/tax_message_trans', tax_message_trans);
 // 发送消息
     app.use('/send_me_message', send_me_message);
 // spider_chat

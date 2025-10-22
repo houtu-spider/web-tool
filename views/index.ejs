@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <title><%= typeof pageTitle !== 'undefined' ? pageTitle : '蜘蛛工具大全' %></title>
+    <link rel="stylesheet" href="/stylesheets/index.css">
 </head>
 
-<frameset cols="240px,*" border="0">
-    <frame src="menu" name="menu"/>
-    <frame src="detail" name="detail" style="background-color: #15151D"/>
-</frameset>
-
 <body>
+<!-- 使用一个容器包裹两个 iframe -->
+<div id="container">
+    <iframe id="menu-frame" src="menu" name="menu" title="导航菜单"></iframe>
+    <iframe id="detail-frame" src="detail" name="detail" title="内容区域"></iframe>
+</div>
 </body>
+<script src="/javascript/index.js" type="module"></script>
 </html>

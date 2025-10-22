@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>税款语句转换 - 蜘蛛工具大全</title>
+    <link rel="stylesheet" href="/stylesheets/common.css">
+    <link rel="stylesheet" href="/stylesheets/tax_message_trans.css">
+</head>
+<body>
+<div class="container">
+    <div class="main">
+
+        <!-- 输入输出区域 -->
+        <div class="io-container">
+            <div class="input-section">
+                <div class="show">输入框</div>
+                <textarea id="inputText" class="text-area" placeholder="请输入要转换的文本..."></textarea>
+            </div>
+            <div></div>
+            <div class="output-section">
+                <div class="show">输出框</div>
+                <textarea id="outputText" class="text-area" readonly placeholder="转换结果将显示在这里..."></textarea>
+            </div>
+        </div>
+
+        <!-- 按钮区域 -->
+        <div class="button-section">
+            <button id="convertBtn" class="btn">手动转换</button>
+            <button id="copyBtn" class="btn cp_btn">点击复制</button>
+            <button id="clearBtn" class="btn">清空</button>
+        </div>
+    </div>
+</div>
+
+<script src="/javascript/tax_message_trans.js" type="module"></script>
+<script async src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.5/dist/sweetalert2.min.js"></script>
+</body>
+</html>

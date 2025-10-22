@@ -1,6 +1,11 @@
 export let send_toast = function(message, level = 'success') {
+    send_message_toast(message, undefined, level)
+}
+
+export let send_message_toast = function (title, message, level = 'success') {
     Swal.fire({
-        title: message,
+        title,
+        text: message,
         icon: level,
         timer: 1000,
         toast: true,
@@ -9,6 +14,6 @@ export let send_toast = function(message, level = 'success') {
     })
 }
 
-export default {send_toast}
+export default {send_toast, send_message_toast}
 
 

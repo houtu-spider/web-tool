@@ -1,0 +1,32 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    overflow: hidden; /* 禁止整个页面滚动 */
+    height: 100%;
+    width: 100%;
+    font-family: sans-serif; /* 设置一个基本字体 */
+}
+
+/* 主容器使用 Flexbox 布局，实现左右并排 */
+#container {
+    display: flex;
+    height: 100vh; /* 视口高度 */
+    width: 100vw; /* 视口宽度 */
+}
+
+/* 左侧菜单栏样式 */
+#menu-frame {
+    width: 240px; /* 固定宽度，与您原设置一致 */
+    height: 100%;
+    border: none; /* 去除 iframe 默认边框 */
+    background-color: #15151D; /* 设置一个背景色，可根据需要调整 */
+}
+
+/* 右侧内容区域样式 */
+#detail-frame {
+    flex: 1; /* 占据剩余的所有宽度 */
+    height: 100%;
+    border: none;
+    background-color: #15151D; /* 与您的原背景色一致 */
+}

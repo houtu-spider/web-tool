@@ -2,9 +2,7 @@ const express = require('express')
 const router = express.Router()
 
 router.get('/', function (req, res, next) {
-    res.render('index', {
-        pageTitle: "蜘蛛工具大全 - 首页"
-    })
+    res.render('detail/tax_message_trans')
 })
 
 module.exports = router;
